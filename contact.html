@@ -46,20 +46,39 @@
 <body class="bg-white text-gray-900">
 
   <!-- Navbar -->
-  <header class="bg-white shadow sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <a href="index.html" class="flex items-center space-x-2">
-        <img src="assets/img/mobiz-logo.png" alt="Mobiz Logo" class="h-10 w-auto" />
-      </a>
-      <nav class="space-x-6 text-sm font-medium">
-        <a href="index.html" class="text-gray-600 hover:text-[#cc00cc]">Home</a>
-		<a href="about.html" class="text-gray-600 hover:text-[#cc00cc]">About</a>
-        <a href="products.html" class="text-gray-600 hover:text-[#cc00cc]">Products</a>
-        <a href="services.html" class="text-gray-600 hover:text-[#cc00cc]">Services</a>
-        <a href="contact.html" class="text-[#cc00cc] font-semibold">Contact</a>
-      </nav>
-    </div>
-  </header>
+<header class="bg-white shadow sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center space-x-2">
+      <img src="assets/img/mobiz-logo.png" alt="Mobiz Logo" class="h-10 w-auto" />
+    </a>
+
+    <!-- Desktop Nav (hidden on mobile) -->
+    <nav class="hidden md:flex space-x-6 text-sm font-medium">
+      <a href="index.html" class="text-gray-600 hover:text-[#cc00cc]">Home</a>
+      <a href="about.html" class="text-gray-600 hover:text-[#cc00cc]">About</a>
+      <a href="products.html" class="text-gray-600 hover:text-[#cc00cc]">Products</a>
+      <a href="services.html" class="text-gray-600 hover:text-[#cc00cc]">Services</a>
+      <a href="contact.html" class="text-[#cc00cc] font-semibold">Contact</a>
+    </nav>
+
+    <!-- Hamburger Button (visible on mobile only) -->
+    <button id="nav-toggle" class="md:hidden text-gray-700 text-2xl focus:outline-none">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Nav Menu (hidden by default) -->
+  <div id="nav-menu" class="hidden md:hidden px-4 pb-4">
+    <nav class="flex flex-col space-y-2 text-sm font-medium">
+      <a href="index.html" class="text-gray-600 hover:text-[#cc00cc]">Home</a>
+      <a href="about.html" class="text-gray-600 hover:text-[#cc00cc]">About</a>
+      <a href="products.html" class="text-gray-600 hover:text-[#cc00cc]">Products</a>
+      <a href="services.html" class="text-gray-600 hover:text-[#cc00cc]">Services</a>
+      <a href="contact.html" class="text-[#cc00cc] font-semibold">Contact</a>
+    </nav>
+  </div>
+</header>
 
   <!-- Hero Section -->
   <section class="relative bg-cover bg-center text-white py-32 px-6" style="background-image: url('assets/img/home.png');">
@@ -163,6 +182,15 @@
 >
   <i class="fab fa-whatsapp"></i>
 </a>
+
+<script>
+  const toggleBtn = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  toggleBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('hidden');
+  });
+</script>
 
 </body>
 </html>
